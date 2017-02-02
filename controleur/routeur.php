@@ -20,7 +20,7 @@ require_once 'controleur/controleurClient.php';
 require_once 'controleur/controleurRecap.php';
 require_once 'controleur/controleurGrille.php';
 require_once 'controleur/controleurConfig.php';
-require_once 'html2pdf/html2pdf.class.php';
+//require_once 'html2pdf/html2pdf.class.php';
 /**
  * Permet de gérer tous les évènements
  * @author baptiste

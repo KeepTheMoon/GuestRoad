@@ -11,7 +11,7 @@
         }
  
         // Requête SQL
-        $requete = "SELECT nom FROM client";
+        $requete = "SELECT nom FROM client WHERE nom LIKE '". $q ."%' LIMIT 0, 10";
  
         // Exécution de la requête SQL
         $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
@@ -23,6 +23,7 @@
         }
  
         // On renvoie le données au format JSON pour le plugin
+        print_r($suggestions);
         echo json_encode($suggestions);
     }
 ?>
