@@ -1,0 +1,65 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+td{
+	 text-align:center;
+}
+
+th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8C8C8C), color-stop(1, #7D7D7D) );
+background:-moz-linear-gradient( center top, #8C8C8C 5%, #7D7D7D 100% );
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8C8C8C', endColorstr='#7D7D7D');
+background-color:#8C8C8C; 
+color:#FFFFFF;
+ font-size: 15px; 
+ font-weight: bold; 
+ border-left: 1px solid #A3A3A3;
+ text-align:center;
+  } 
+td#Prisedecontact{    
+background-color: rgba(105,	105	,105, 0.1);
+color:rgb(74, 74, 74);
+}
+td#Préétude{    
+background-color: rgba(105,	105	,105, 0.2);	
+color:rgb(74, 74, 74);
+}
+td#RDV{    
+background-color: rgba(105,	105	,105, 0.3);
+color:rgb(74, 74, 74);
+}
+td#ARC{    
+background-color: rgba(105,	105	,105, 0.4);
+color:rgb(74, 74, 74);
+}
+td#Envoimandat{    
+background-color: rgba(105,	105	,105, 0.5);
+color:rgb(74, 74, 74);
+}
+td#DDP{    
+background-color: rgba(105,	105	,105, 0.6);
+color:rgb(255,	255	,255);		
+}
+td#Relancebanque{    
+background-color: rgba(105,	105	,105, 0.7);
+color:rgb(255,	255	,255);			
+}
+td#RDVbanque{    
+background-color: rgba(105,	105	,105, 0.8);
+color:rgb(255,	255	,255);		
+}
+td#Attenteédition{    
+background-color: rgba(105,	105	,105, 0.9);
+color:rgb(255,	255	,255);		
+}
+td#Facture{    
+background-color: rgba(105,	105	,105, 1);
+color:rgb(255,	255	,255);		
+}
+td#Clos{    
+background-color: black;
+color:white;		
+}
