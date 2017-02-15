@@ -1,29 +1,32 @@
 <?php
-    if(isset($_GET['query'])) {
-        // Mot tapé par l'utilisateur
-        $q = htmlentities($_GET['query']);
- 
-        // Connexion à la base de données
-        try {
-            $bdd = new PDO('mysql:host=localhost;dbname=gestdep', 'root', '');
-        } catch(Exception $e) {
-            exit('Impossible de se connecter à la base de données.');
-        }
- 
-        // Requête SQL
-        $requete = "SELECT nom FROM client WHERE nom LIKE '". $q ."%' LIMIT 0, 10";
- 
-        // Exécution de la requête SQL
-        $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
- 
-        // On parcourt les résultats de la requête SQL
-        while($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
-            // On ajoute les données dans un tableau
-            $suggestions['suggestions'][] = $donnees['nom'];
-        }
- 
-        // On renvoie le données au format JSON pour le plugin
-        print_r($suggestions);
-        echo json_encode($suggestions);
-    }
+define('DB_SERVER', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'root');
+define('DB_NAME', 'gestdep');
+
+
+if (isset($_GET['term'])){
+	$return_arr = array();
+
+	try {
+	    $conn = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	    $stmt = $conn->prepare('SELECT * FROM client WHERE nom LIKE :term OR adresse LIKE :term');
+	    $stmt->execute(array('term' => '%'.$_GET['term'].'%'));
+
+	    while($row = $stmt->fetch()) {
+	        $return_arr[] =  $row['nom']." - ".$row['adresse'];
+	    }
+
+	} catch(PDOException $e) {
+	    echo 'ERROR: ' . $e->getMessage();
+	}
+
+
+    /* Toss back results as json encoded array. */
+    echo json_encode($return_arr);
+}
+
+
 ?>

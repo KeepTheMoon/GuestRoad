@@ -117,7 +117,7 @@ class Routeur {
 /**
  * Traite une requête entrante
  */
- 
+
     public function routerRequete() {
 /**
  * Demande de connexion
@@ -139,8 +139,8 @@ class Routeur {
  */
         elseif(isset($_POST['apresConnexion'])) {
 /**
- * Vérification des logins 
- */         
+ * Vérification des logins
+ */
             $login=$_POST['mail'];
             $_mail=$_POST['mail'];
             $_dao=new dao();
@@ -149,7 +149,7 @@ class Routeur {
                 echo '<div class="container"><div class="alert alert-danger" role="alert">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>Attention !</strong> Le format de l\'identifiant n\'est pas correct.
-                    </div></div>'; 
+                    </div></div>';
                 $this->ctrlAuthentification->footer();
                  }
                
@@ -158,9 +158,9 @@ class Routeur {
                     $_SESSION['droit'] = $_dao->getDroit($login);
                     $_SESSION['societe']=$_dao->getEntrepriseParUtilisateur($login);
                     $_SESSION['mail']=$_mail;
-                  
+
                     $this->_ctrlAccueil->vueAccueil($_SESSION['login'],$_SESSION['droit']);
-                  
+
                 }
                 else
                 {
@@ -170,7 +170,7 @@ class Routeur {
   		                    <strong>Attention !</strong> Le mot de passe ou l\'identifiant de vous avez saisie est incorrect.
                             </div></div>';
                     $this->ctrlAuthentification->footer();
-                } 
+                }
         }
         /**
          * Si l'utilisateur est connecté
@@ -180,12 +180,12 @@ class Routeur {
 
 /****************************************************************************************************************************************
                                                    Partie Trajet
-****************************************************************************************************************************************/        
+****************************************************************************************************************************************/
             if(isset($_GET['trajet'])){
                 $this->recupIdClient();
 
                 $_ctrlTrajet=new ControleurTrajet($_SESSION['login'],$_SESSION['droit']);
-                
+
                  $_SESSION['entreprise']=$_dao->getParId($_SESSION['societe'], "entreprise");
                 if($_GET['trajet']!=null&!isset($_GET['suppr'])){
                     $_ctrlTrajet->jour($_SESSION['login'], $_GET['trajet']);
@@ -200,9 +200,9 @@ class Routeur {
             }
 /****************************************************************************************************************************************
                                                    Partie Voiture
-****************************************************************************************************************************************/      
+****************************************************************************************************************************************/
             elseif(isset($_GET['voiture'])){
-               
+
                  if(isset($_POST['nouvelle'])){
                   $_dao->createVoiture($_POST['nom'],$_POST['puissance'],$_SESSION['societe']);
                  }
@@ -211,11 +211,11 @@ class Routeur {
                 }
                 $_ctrlVoiture=new ControleurVoiture($_SESSION['login'],$_SESSION['droit']);
                 $_ctrlVoiture->tableau($_SESSION['mail']);
-               
+
             }
 /****************************************************************************************************************************************
                                                    Partie Client
-****************************************************************************************************************************************/    
+****************************************************************************************************************************************/
             elseif(isset($_GET['client'])){
                 $_ctrlClient=new ControleurClient($_SESSION['login'],$_SESSION['droit']);
                 $idEntreprise=$_dao->getEntrepriseParUtilisateur($_SESSION['login']);
@@ -229,10 +229,10 @@ class Routeur {
                         $extension_upload = strtolower(  substr(  strrchr($_FILES['import']['name'], '.')  ,1)  );
                         if ( in_array($extension_upload,$extensions_valides) ){
                             if($_POST['format']=="o"){
-                                $this->importClientsOutlook($_FILES['import']['tmp_name']);    
+                                $this->importClientsOutlook($_FILES['import']['tmp_name']);
                             }
                             elseif($_POST['format']=="d"){
-                                $this->importClientsDolibarr($_FILES['import']['tmp_name']);    
+                                $this->importClientsDolibarr($_FILES['import']['tmp_name']);
                             }
                           echo "Extension correcte<br/>";
                         }
@@ -241,17 +241,17 @@ class Routeur {
                 }
                 $listeClient=$_dao->getListeClient($idEntreprise);
                 $_ctrlClient->vueClient($listeClient);
-            }        
+            }
 /****************************************************************************************************************************************
                                                    Partie Recap
-****************************************************************************************************************************************/    
+****************************************************************************************************************************************/
             elseif(isset($_GET['recap'])){
                 $_ctrlRecap=new ControleurRecap($_SESSION['login'],$_SESSION['droit']);
                 $_ctrlRecap->vueRecap();
             }
 /****************************************************************************************************************************************
                                                    Partie Utilisateur
-****************************************************************************************************************************************/    
+****************************************************************************************************************************************/
             elseif(isset($_GET['utilisateur'])){
 
                 $idEntreprise=$_dao->getEntrepriseParUtilisateur($_SESSION['login']);
@@ -262,20 +262,20 @@ class Routeur {
                 $listeUtilisateurs=$_dao->getListeUtilisateurParEntreprise($idEntreprise);
                 $_ctrlEmploye=new ControleurEmploye();
                 $_ctrlEmploye->vueEmploye($_SESSION['login'],$_SESSION['droit'],$listeUtilisateurs);
-            }  
+            }
 /****************************************************************************************************************************************
                                                    Partie Entreprise
-****************************************************************************************************************************************/  
+****************************************************************************************************************************************/
             elseif(isset($_GET['entreprise'])){
                 $_ctrlSociete=new ControleurSociete();
                 $idEntreprise=$_dao->getEntrepriseParUtilisateur($_SESSION['login']);
                 $entreprise=$_dao->getParId($idEntreprise, "entreprise");
                 $responsable=$_dao->getParId($entreprise->getIdResp(),'utilisateur');
                 $_ctrlSociete->vueSociete($_SESSION['login'],$_SESSION['droit'], $entreprise, $responsable);
-            }  
+            }
 /****************************************************************************************************************************************
                                                    Partie Compte
-****************************************************************************************************************************************/  
+****************************************************************************************************************************************/
             elseif(isset($_GET['compte'])){
                 if(isset($_POST['envoyer'])){
                     if($_dao->getMdp($_SESSION['mail'])==crypt($_POST['old'], 'gestdep')){
@@ -284,15 +284,15 @@ class Routeur {
                 }
                 $_ctrlCompte=new ControleurCompte();
                 $_ctrlCompte->vueCompte($_SESSION['login'],$_SESSION['droit']);
-            }  
+            }
             elseif(isset($_GET['adminu'])){
                 $_ctrlAdminUtil=new ControleurAdminUtil($_SESSION['login'],$_SESSION['droit']);
                 $_ctrlAdminUtil->vueAdminUtil();
-            } 
+            }
             elseif(isset($_GET['admine'])){
                 $_ctrlAdminEntre=new ControleurAdminEntre($_SESSION['login'],$_SESSION['droit']);
                 $_ctrlAdminEntre->vueAdminEntre();
-            } 
+            }
             elseif(isset($_GET['grille'])){
                 $_ctrlGrille=new ControleurGrille($_SESSION['login'],$_SESSION['droit']);
                 $_ctrlGrille->vueGrille();
@@ -303,7 +303,7 @@ class Routeur {
             }
             else{
                 $this->_ctrlAccueil->vueAccueil($_SESSION['login'],$_SESSION['droit']);
-            }  
+            }
 
 
         }
@@ -398,10 +398,10 @@ class Routeur {
                         $check = 1;
                     }
                     else{$check = 0;}
-                    $_dao=new dao();     
+                    $_dao=new dao();
 
                     $_dao->createClient(utf8_encode($nom), utf8_encode($email), utf8_encode($telephone), utf8_encode($adresse), $_SESSION['societe'], $check);
-               } 
+               }
             }
         fclose($handle);
         }
@@ -419,15 +419,15 @@ class Routeur {
                     $email = $data[5];
                     $telephone = $data[4];
                     $adresse= $data[1].", ".$data[2].", ".$data[3];
-                   
+
                     if ($adresse != ""){
                         $check = 1;
                     }
                     else{$check = 0;}
-                    $_dao=new dao();     
+                    $_dao=new dao();
 
                     $_dao->createClient(utf8_encode($nom), utf8_encode($email), utf8_encode($telephone), utf8_encode($adresse), $_SESSION['societe'], $check);
-               } 
+               }
             }
         fclose($handle);
         }
@@ -436,17 +436,17 @@ class Routeur {
     {
         // transformer les caractères accentués en entités HTML
         $str = htmlentities($str, ENT_NOQUOTES, $encoding);
-     
+
         // remplacer les entités HTML pour avoir juste le premier caractères non accentués
         // Exemple : "&ecute;" => "e", "&Ecute;" => "E", "Ã " => "a" ...
         $str = preg_replace('#&([A-za-z])(?:acute|grave|cedil|circ|orn|ring|slash|th|tilde|uml);#', '\1', $str);
-     
+
         // Remplacer les ligatures tel que : Œ, Æ ...
         // Exemple "Å“" => "oe"
         $str = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $str);
         // Supprimer tout le reste
         $str = preg_replace('#&[^;]+;#', '', $str);
-     
+
         return $str;
     }
     public function calcDistance($a,$b) {
@@ -457,12 +457,12 @@ class Routeur {
         $url='https://maps.googleapis.com/maps/api/distancematrix/xml?origins='.$adresse1.'&destinations='.$adresse2.'&language=fr-FR';
         $xml=file_get_contents($url);
         $root = simplexml_load_string($xml);
-        $distance=$root->row->element->distance->text;    
+        $distance=$root->row->element->distance->text;
         return $distance;
     }
 
-    public function recupIdClient() {   
-     $_dao=new dao();      
+    public function recupIdClient() {
+     $_dao=new dao();
      $id = $_dao->getIdByMail($_SESSION['mail']);
       if(isset($_POST['submit'])){
        // echo '<br><br><br><br>';

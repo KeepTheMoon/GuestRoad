@@ -14,7 +14,7 @@ class util
      * constructeur vide
      */
     public function __construct(){
-        
+
     }
     /**
      * Affiche le code html pour faire le header de chaque page
@@ -113,7 +113,7 @@ class util
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 	            		<?php
-       
+
           if ($droits == "Admin" || $droits == "SuAdmin"){
               echo '<li';if($section=="Util"){echo' class="active"';}echo'><a href="index.php?utilisateur">Utilisateurs</a></li>';
               echo '<li';if($section=="Entre"){echo' class="active"';}echo'><a href="index.php?entreprise">Entreprise</a></li>';
@@ -139,7 +139,7 @@ class util
                       <li';if($section=="Config"){echo' class="active"';}echo'><a href="index.php?config">Configuration général</a></li>
                     </ul>
                   </li>';
-            
+
         }
         ?>
 	            		</ul>
@@ -150,7 +150,7 @@ class util
 <?php
     }
 
-   
-           
+
+
 }
 ?>

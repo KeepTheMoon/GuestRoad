@@ -25,7 +25,7 @@ class dao{
      */
     function __construct(){
     }
-    
+
 // méthode qui permet de se connecter à la base
 // une exception ConnectionException est levée s'il y a un problème de connexion à la base
 /**
@@ -33,27 +33,27 @@ class dao{
  * @throws ConnexionException
  */
     public function connexion(){
-    
+
         try {
             include "variables.php";
-            $this->_connexion = new PDO($co, $id, $mdp); 
+            $this->_connexion = new PDO($co, $id, $mdp);
             $this->_connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->_connexion->exec("SET CHARACTER SET utf8");
             return true;
         }
-        catch(PDOException $e){  
-            return false;	
+        catch(PDOException $e){
+            return false;
         }
     }
 
-// 
+//
 /**
  * méthode qui permet de se déconnecter de la base
  */
     public function deconnexion(){
-    
+
         $this->_connexion = null;
-    
+
     }
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 // Les Listes
@@ -119,7 +119,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-    
+
         try {
             if($droit==""){
                 $req = $this->_connexion->query('SELECT * FROM utilisateur');
@@ -157,7 +157,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM Voiture WHERE entreprise = ?');
             $req->execute(array($idEntreprise));
@@ -173,7 +173,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         }
         $req->closeCursor();
         $this->deconnexion();
-        return $listeVoiture;  
+        return $listeVoiture;
     }
 /**
  * récupère la liste des entreprises
@@ -188,7 +188,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM entreprise');
             $req->execute();
@@ -204,7 +204,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         }
         $req->closeCursor();
         $this->deconnexion();
-        return $ListeEntreprise;  
+        return $ListeEntreprise;
     }
 /**
  * récupère la grille des indemnités kilométrique
@@ -221,7 +221,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM grille WHERE annee = ?');
             $req->execute(array($year));
@@ -237,7 +237,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         }
         $req->closeCursor();
         $this->deconnexion();
-        return $grille;  
+        return $grille;
     }
 /**
  * récupère la liste des clients pour une entreprise
@@ -253,7 +253,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM Client WHERE entreprise = ?');
             $req->execute(array($idEntreprise));
@@ -269,7 +269,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         }
         $req->closeCursor();
         $this->deconnexion();
-        return $listeClient;  
+        return $listeClient;
     }
 /**
  * récupère la liste des clients valide pour une entreprise
@@ -285,7 +285,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM Client WHERE entreprise = ? AND val = 1');
             $req->execute(array($idEntreprise));
@@ -301,9 +301,9 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         }
         $req->closeCursor();
         $this->deconnexion();
-        return $listeClient;  
+        return $listeClient;
     }
-    
+
 /**
  * Récupère le mot de passe (crypté) d'un utilisateur
  * @param string $mail
@@ -318,10 +318,11 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
-            $req=$this->_connexion->prepare('SELECT * FROM Utilisateur WHERE mail = ?');
+            $req=$this->_connexion->prepare('SELECT * FROM utilisateur WHERE mail = ?');
             $req->execute(array($mail));
+
         }
         catch(PDOException $e) {
             throw new TableAccesException($e->getMessage());
@@ -348,9 +349,9 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
-            $req=$this->_connexion->prepare('SELECT * FROM Utilisateur WHERE mail = ?');
+            $req=$this->_connexion->prepare('SELECT * FROM utilisateur WHERE mail = ?');
             $req->execute(array($mail));
         }
         catch(PDOException $e) {
@@ -378,7 +379,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM '.$type.' WHERE id = ?');
             $req->execute(array($id));
@@ -419,7 +420,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM '.$type.' WHERE nom = ?');
             $req->execute(array($nom));
@@ -449,9 +450,9 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
-            $req=$this->_connexion->prepare('SELECT * FROM Utilisateur WHERE mail = ?');
+            $req=$this->_connexion->prepare('SELECT * FROM utilisateur WHERE mail = ?');
             $req->execute(array($mail));
         }
         catch(PDOException $e) {
@@ -461,7 +462,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         $agence=$donnees['entreprise'];
         $req->closeCursor();
         $this->deconnexion();
-        return $agence;    
+        return $agence;
     }
 
 /**
@@ -478,9 +479,9 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
-            $req=$this->_connexion->prepare('SELECT * FROM Utilisateur WHERE mail = ?');
+            $req=$this->_connexion->prepare('SELECT * FROM utilisateur WHERE mail = ?');
             $req->execute(array($mail));
         }
         catch(PDOException $e) {
@@ -490,7 +491,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         $id=$donnees['id'];
         $req->closeCursor();
         $this->deconnexion();
-        return $id;    
+        return $id;
     }
 
     public function getTrajet($utilisateur){
@@ -500,7 +501,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM trajet WHERE ordre = 0 AND utilisateur = ?');
             $req->execute(array($utilisateur));
@@ -516,7 +517,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         }
         $req->closeCursor();
         $this->deconnexion();
-        return $listeTrajet;    
+        return $listeTrajet;
     }
 
     public function getTrajetParDate($utilisateur, $date){
@@ -526,7 +527,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         catch(PDOException $e) {
             throw new ConnexionException($e->getMessage());
         }
-        
+
         try {
             $req=$this->_connexion->prepare('SELECT * FROM trajet WHERE date = ? AND utilisateur = ?');
             $req->execute(array($date, $utilisateur));
@@ -542,12 +543,12 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         }
         $req->closeCursor();
         $this->deconnexion();
-        return $listeTrajet;    
+        return $listeTrajet;
     }
-    
+
 //-------------------------------------------------------------------------------------------------------------------------------------------------
     // LES CREATE !!!!!!!!!!!!!
-//-------------------------------------------------------------------------------------------------------------------------------------------------    
+//-------------------------------------------------------------------------------------------------------------------------------------------------
 //
 /**
  * Créer un nouveau dossier
@@ -763,7 +764,7 @@ public function createTrajet($utilisateur, $client, $ordre, $voiture, $date, $km
         elseif($idAncienEtat==10){
             $this->changementDate($idDossier, NULL, 'signature');
         }
-        
+
     }
 
 /**
@@ -884,7 +885,7 @@ public function changementRelance($idDossier, $valeur, $com){
         try {
             $req=$this->_connexion->prepare("UPDATE utilisateur SET id_agence = ? WHERE id =?");
             $req->execute(array($idAgence, $id));
-           
+
         }
         catch(PDOException $e) {
             throw new TableAccesException($e->getMessage());
