@@ -1,7 +1,7 @@
 <?php
 define('DB_SERVER', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', '');
 define('DB_NAME', 'gestdep');
 
 
@@ -16,7 +16,7 @@ if (isset($_GET['term'])){
 	    $stmt->execute(array('term' => '%'.$_GET['term'].'%'));
 
 	    while($row = $stmt->fetch()) {
-	        $return_arr[] =  $row['nom']." - ".$row['adresse'];
+					array_push($return_arr, utf8_encode($row['nom']." - ".$row['adresse']));
 	    }
 
 	} catch(PDOException $e) {
@@ -25,6 +25,8 @@ if (isset($_GET['term'])){
 
 
     /* Toss back results as json encoded array. */
+		//print_r($return_arr);
+
     echo json_encode($return_arr);
 }
 

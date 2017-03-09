@@ -287,7 +287,7 @@ public function getListeUtilisateurParEntreprise($idEntreprise){
         }
 
         try {
-            $req=$this->_connexion->prepare('SELECT * FROM Client WHERE entreprise = ? AND val = 1');
+            $req=$this->_connexion->prepare('SELECT * FROM client WHERE entreprise = ? AND val = 1');
             $req->execute(array($idEntreprise));
         }
         catch(PDOException $e) {

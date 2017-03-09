@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <style>
 .autocomplete-suggestions { border: 1px solid #999; background: #f4eaea; overflow: auto; }
@@ -15,10 +15,8 @@
 </div>
 
 <script>
-$(function() {
-    $( "#client" ).autocomplete({
-        source: 'bdd.php'
-    });
+$('#client').autocomplete({
+    source : 'bdd.php'
 });
 
 </script>
