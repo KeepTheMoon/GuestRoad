@@ -1,0 +1,1 @@
+{ "_id" : { "$oid" : "5350f2aff7fb3bc3f6bb85dd" }, "_user_id" : { "$oid" : "5350f2af20f8c6aa22aab150" }, "accesses" : [ "administrator" ], "superUser" : false }

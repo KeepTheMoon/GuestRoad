@@ -1,0 +1,14 @@
+{ "_id" : { "$oid" : "5396b4325e196a5621347bd6" }, "company" : { "$oid" : "53198cfd502257fa13816aed" }, "status" : "OK", "level" : 2, "date" : { "$date" : 1402358400000 }, "count" : 7, "__v" : 0 }
+{ "_id" : { "$oid" : "5396bf6c1af281a92a8991ab" }, "company" : { "$oid" : "53198cfd502257fa13816aed" }, "status" : "OK", "level" : 1, "date" : { "$date" : 1402358400000 }, "count" : 1, "__v" : 0 }
+{ "_id" : { "$oid" : "53970feb16b055ad2f0210db" }, "company" : { "$oid" : "52ef99a6804c61740a0001d3" }, "status" : "OK", "level" : 2, "date" : { "$date" : 1402358400000 }, "count" : 39, "__v" : 0 }
+{ "_id" : { "$oid" : "53971d5c16b055ad2f02110f" }, "company" : { "$oid" : "52ef99a6804c61740a0001d3" }, "status" : "OK", "level" : 1, "date" : { "$date" : 1402358400000 }, "count" : 1, "__v" : 0 }
+{ "_id" : { "$oid" : "539803ae4cd9f01f07825035" }, "company" : { "$oid" : "52ef99a6804c61740a0001d3" }, "status" : "OK", "level" : 2, "date" : { "$date" : 1402444800000 }, "count" : 47, "__v" : 0 }
+{ "_id" : { "$oid" : "53980a324cd9f01f078250b5" }, "company" : { "$oid" : "52ef99a6804c61740a0001d3" }, "status" : "OK", "level" : 1, "date" : { "$date" : 1402444800000 }, "count" : 1, "__v" : 0 }
+{ "_id" : { "$oid" : "53980d604cd9f01f078250d0" }, "company" : { "$oid" : "5396a6b15e196a5621347bcb" }, "status" : "OK", "level" : 1, "date" : { "$date" : 1402444800000 }, "count" : 284, "__v" : 0 }
+{ "_id" : { "$oid" : "53986b85926f8435086d0009" }, "company" : { "$oid" : "5396a6b15e196a5621347bcb" }, "status" : "ZERO_RESULTS", "level" : 1, "date" : { "$date" : 1402444800000 }, "count" : 56, "__v" : 0 }
+{ "_id" : { "$oid" : "53994e6ba0f0da350ec4951c" }, "company" : { "$oid" : "5396a6b15e196a5621347bcb" }, "status" : "OK", "level" : 1, "date" : { "$date" : 1402531200000 }, "count" : 51, "__v" : 0 }
+{ "_id" : { "$oid" : "53994f48a0f0da350ec49524" }, "company" : { "$oid" : "5396a6b15e196a5621347bcb" }, "status" : "OK", "level" : 2, "date" : { "$date" : 1402531200000 }, "count" : 24, "__v" : 0 }
+{ "_id" : { "$oid" : "53996136a0f0da350ec49586" }, "company" : { "$oid" : "5396a6b15e196a5621347bcb" }, "status" : "ZERO_RESULTS", "level" : 1, "date" : { "$date" : 1402531200000 }, "count" : 1, "__v" : 0 }
+{ "_id" : { "$oid" : "53999df5a0f0da350ec495bb" }, "company" : { "$oid" : "52ef99a6804c61740a0001d3" }, "status" : "OK", "level" : 2, "date" : { "$date" : 1402531200000 }, "count" : 29, "__v" : 0 }
+{ "company" : { "$oid" : "5395d696f48d6f81118d74ba" }, "status" : "OK", "level" : 1, "_id" : { "$oid" : "5399c7166bf852422113ce44" }, "date" : { "$date" : 1402531200000 }, "count" : 2, "__v" : 0 }
+{ "company" : { "$oid" : "5395d696f48d6f81118d74ba" }, "status" : "OK", "level" : 2, "_id" : { "$oid" : "5399c7ff8f498c6421b158e8" }, "date" : { "$date" : 1402531200000 }, "count" : 3, "__v" : 0 }

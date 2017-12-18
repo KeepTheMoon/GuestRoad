@@ -1,0 +1,22 @@
+{ "_id" : { "$oid" : "5285d4f378fad6235c000003" }, "__v" : 2, "description" : "CLS-Conseil", "name" : "CLS-Conseil", "patron" : { "$oid" : "5285d51878fad6235c000004" } }
+{ "_id" : { "$oid" : "5285d88b78fad6235c000008" }, "__v" : 0, "description" : "", "name" : "MADULI Frederic", "patron" : { "$oid" : "5285d88b78fad6235c000009" } }
+{ "_id" : { "$oid" : "5285dcca78fad6235c00000f" }, "__v" : 0, "description" : "", "name" : "VAILLANT Gurvan", "patron" : { "$oid" : "5285dcca78fad6235c000010" } }
+{ "_id" : { "$oid" : "5285dcd778fad6235c000011" }, "__v" : 0, "description" : "", "name" : "THIBAUD Yvan", "patron" : { "$oid" : "5285dcd778fad6235c000012" } }
+{ "_id" : { "$oid" : "5285de5378fad6235c000015" }, "__v" : 0, "description" : "", "name" : "QUELEN Christophe", "patron" : { "$oid" : "5285de5378fad6235c000016" } }
+{ "_id" : { "$oid" : "52864472e9bdb3cd0d0000b5" }, "__v" : 0, "description" : "", "name" : "LANTON Claude", "patron" : { "$oid" : "52864472e9bdb3cd0d0000b6" } }
+{ "_id" : { "$oid" : "5286502d4b7b80d4130009c0" }, "__v" : 0, "description" : "", "name" : "EI Stephanie", "patron" : { "$oid" : "5286502d4b7b80d4130009c1" } }
+{ "_id" : { "$oid" : "52ef99a6804c61740a0001d3" }, "__v" : 1, "description" : "dvm renov", "name" : "DVM RENOV", "patron" : { "$oid" : "52ef99a6804c61740a0001d4" }, "suspended" : false }
+{ "_id" : { "$oid" : "53198cfd502257fa13816aed" }, "__v" : 2, "description" : "", "name" : "DIS ATLANTIC Rondeau Greg", "patron" : { "$oid" : "53198cfd502257fa13816aee" }, "suspended" : false }
+{ "_id" : { "$oid" : "531996fd502257fa13816b27" }, "__v" : 2, "description" : "", "name" : "DIS ATLANTIC Rondeau Anne", "patron" : { "$oid" : "531996fd502257fa13816b28" }, "suspended" : false }
+{ "_id" : { "$oid" : "5350f29220f8c6aa22aab13f" }, "__v" : 0, "name" : "DVM RENOV - BENOIT", "patron" : null, "suspended" : false }
+{ "_id" : { "$oid" : "5350f2af20f8c6aa22aab14f" }, "__v" : 0, "name" : "DVM RENOV - David", "patron" : null, "suspended" : false }
+{ "_id" : { "$oid" : "5350f86d20f8c6aa22aab1e6" }, "__v" : 1, "description" : "", "name" : "TAUX DISCOUNT - BIDAULT S", "patron" : { "$oid" : "5350f86d20f8c6aa22aab1e7" }, "suspended" : false }
+{ "_id" : { "$oid" : "535e0d5720f8c6aa22aab3cb" }, "__v" : 0, "description" : "", "name" : "DANGLETERRE", "patron" : { "$oid" : "535e0d5720f8c6aa22aab3cc" }, "suspended" : false }
+{ "_id" : { "$oid" : "535fa82b20f8c6aa22aab4a6" }, "__v" : 0, "description" : "", "name" : "DANGLETERRE Philippe", "patron" : { "$oid" : "535e0d5720f8c6aa22aab3cc" }, "suspended" : false }
+{ "_id" : { "$oid" : "535fae3120f8c6aa22aab4e0" }, "__v" : 0, "name" : "DANGLETERRE B", "patron" : { "$oid" : "535e0d5720f8c6aa22aab3cc" }, "suspended" : false }
+{ "_id" : { "$oid" : "538efff2858a87523f8eaa65" }, "__v" : 0, "description" : "", "name" : "AB COUVERTURE", "patron" : { "$oid" : "538d9664a545d42e0a174236" }, "suspended" : false }
+{ "_id" : { "$oid" : "5395d696f48d6f81118d74ba" }, "description" : "", "name" : "TECHIDEA", "suspended" : false, "__v" : 0, "patron" : { "$oid" : "5395d647f48d6f81118d74b9" } }
+{ "_id" : { "$oid" : "5396a6b15e196a5621347bcb" }, "description" : "", "name" : "NISSAFLOR", "suspended" : false, "__v" : 0, "patron" : { "$oid" : "5396a7755e196a5621347bcc" } }
+{ "_id" : { "$oid" : "5396b33e5e196a5621347bcf" }, "description" : "", "name" : "JARDI CREATIONS", "suspended" : false, "__v" : 0, "patron" : { "$oid" : "5396b3945e196a5621347bd0" } }
+{ "_id" : { "$oid" : "5396b4365e196a5621347bda" }, "description" : "", "name" : "DIS ANTALANTIC Duval", "suspended" : false, "__v" : 0, "patron" : { "$oid" : "5396b3fe5e196a5621347bd2" } }
+{ "_id" : { "$oid" : "53987c99926f8435086d003b" }, "description" : "", "name" : "OLIVIER DUVAL", "suspended" : false, "__v" : 0, "patron" : { "$oid" : "5396b3fe5e196a5621347bd2" } }

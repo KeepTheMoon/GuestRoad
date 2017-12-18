@@ -1,0 +1,3 @@
+{ "_id" : { "$oid" : "5350f38df7fb3bc3f6bb85df" }, "__v" : 1, "_user_id" : { "$oid" : "5350f29220f8c6aa22aab140" }, "accesses" : [ "commercial" ] }
+{ "_id" : { "$oid" : "5350f38df7fb3bc3f6bb85e0" }, "__v" : 1, "_user_id" : { "$oid" : "5350f2af20f8c6aa22aab150" }, "accesses" : [ "commercial" ] }
+{ "_id" : { "$oid" : "538cc318a545d42e0a17422e" }, "_user_id" : { "$oid" : "52ef99a6804c61740a0001d4" }, "accesses" : "admin" }
