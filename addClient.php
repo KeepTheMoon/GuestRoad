@@ -35,16 +35,29 @@
         <li ng-repeat="todo in todoList.todos">
           <label class="checkbox">
             <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
+            <span id="{{todo.id}}" class="done-{{todo.done}}">{{todo.text}}</span>
           </label>
         </li>
       </ul>
+      fuck
+      <input class="btn-primary" type="submit" value="envoyer">
 
     </div>
     <script>
     $('#client').autocomplete({
         source : 'bdd.php'
     });
+
+   $(function () {
+    $('#datetimepicker4').datetimepicker({language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0});
+});
 
     </script>
   </body>

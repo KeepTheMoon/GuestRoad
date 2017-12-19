@@ -152,7 +152,7 @@ class Routeur {
                     </div></div>';
                 $this->ctrlAuthentification->footer();
                  }
-               
+
                elseif ($_dao->getMdp($login)==crypt($_POST['mdp'], 'gestdep')) {
                     $_SESSION['login'] = $login;
                     $_SESSION['droit'] = $_dao->getDroit($login);
@@ -451,9 +451,9 @@ class Routeur {
     }
     public function calcDistance($a,$b) {
         $a1=$this->suppr_accents($a);
-        $adresse1=str_replace(" ", "+", $a1);
+        $adresse1=str_replace(" ", "%20", $a1);
         $a2=$this->suppr_accents($b);
-        $adresse2=str_replace(" ", "+", $a2);
+        $adresse2=str_replace(" ", "%20", $a2);
         $url='https://maps.googleapis.com/maps/api/distancematrix/xml?origins='.$adresse1.'&destinations='.$adresse2.'&language=fr-FR';
         $xml=file_get_contents($url);
         $root = simplexml_load_string($xml);
